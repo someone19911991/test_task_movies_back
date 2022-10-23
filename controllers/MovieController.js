@@ -17,6 +17,7 @@ class MovieController {
             }
             return res.json(response);
         }catch(err){
+            console.log(err)
             next(err);
         }
     }
