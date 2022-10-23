@@ -6,10 +6,13 @@ const { pool, createDBTables } = require("./db");
 const app = express();
 const errorMiddleware = require("./middlewares/error-handler");
 
-const { PORT, FRONT_URL } = process.env;
+const { PORT } = process.env;
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
+app.get("/", (req, res) => {
+    res.json('Here you are!');
+});
 app.use("/api", router);
 app.use(errorMiddleware);
 
