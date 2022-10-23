@@ -54,7 +54,6 @@ class MovieController {
 
     async deleteMovie(req, res, next){
         try{
-            throw new Error('Trial error');
             const { imdbID } = req.params;
             await pool.query(`DELETE FROM movies WHERE imdbid = $1`, [imdbID]);
             return res.json({imdbID});
